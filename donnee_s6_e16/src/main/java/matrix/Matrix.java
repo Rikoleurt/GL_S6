@@ -1,6 +1,8 @@
 package matrix;
+import iterator.ColumnRowIterator;
 import iterator.Iterable;
 import iterator.Iterator;
+import iterator.RowColumnIterator;
 
 public class Matrix implements Iterable {
 	
@@ -43,7 +45,8 @@ public class Matrix implements Iterable {
 
 	public Iterator createIterator() {
 		//TODO: Add your code here !!
-		return null;
+//		return new ColumnRowIterator(mat);
+        return new RowColumnIterator(mat);
 	}
 
 }
