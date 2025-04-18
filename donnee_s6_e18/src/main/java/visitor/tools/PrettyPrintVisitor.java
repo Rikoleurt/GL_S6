@@ -4,7 +4,7 @@ import visitor.syntax.AdditionExpression;
 import visitor.syntax.Constant;
 import visitor.syntax.DivisionExpression;
 import visitor.syntax.MultiplicationExpression;
-import visitor.syntax.SubstractionExpression;
+import visitor.syntax.SubtractionExpression;
 
 
 public class PrettyPrintVisitor implements ExpressionVisitor {
@@ -27,7 +27,7 @@ public class PrettyPrintVisitor implements ExpressionVisitor {
 		result.append(" )");
 	}
 	
-	public void visitSubstractionExpression(SubstractionExpression e) {
+	public void visitSubtractionExpression(SubtractionExpression e) {
 		result.append("( ");
 		e.getLeft().accept(this);
 		result.append(" - ");

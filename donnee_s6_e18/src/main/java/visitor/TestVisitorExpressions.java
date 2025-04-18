@@ -5,7 +5,10 @@ import visitor.syntax.Constant;
 import visitor.syntax.DivisionExpression;
 import visitor.syntax.Expression;
 import visitor.syntax.MultiplicationExpression;
-import visitor.syntax.SubstractionExpression;
+import visitor.syntax.SubtractionExpression;
+import visitor.tools.CalculationVisitor;
+import visitor.tools.DepthVisitor;
+import visitor.tools.PrefixPrintVisitor;
 import visitor.tools.PrettyPrintVisitor;
 import java.util.logging.*;
 
@@ -15,7 +18,7 @@ public class TestVisitorExpressions {
 
 	public static void main(String[] args) {
 		
-		Expression mye1 = new SubstractionExpression(
+		Expression mye1 = new SubtractionExpression(
 				new Constant(10),
 				new Constant(6));
 		
@@ -23,13 +26,13 @@ public class TestVisitorExpressions {
 				new DivisionExpression(
 						new Constant(50),
 						new Constant(2)),
-				new SubstractionExpression(
+				new SubtractionExpression(
 						new MultiplicationExpression(
 								new Constant(2),
 								mye1),
 						new Constant(17)));
 		
-		Expression mye3 = new SubstractionExpression(
+		Expression mye3 = new SubtractionExpression(
 				new MultiplicationExpression(
 						new Constant(3),
 						new Constant(7)),
@@ -49,7 +52,7 @@ public class TestVisitorExpressions {
 		
 		Expression myExample2 = new DivisionExpression(
 				new Constant(12),
-				new SubstractionExpression(
+				new SubtractionExpression(
 						new AdditionExpression(
 								new Constant(5),
 								new Constant(2)),
@@ -58,13 +61,13 @@ public class TestVisitorExpressions {
 								new Constant(2))));
 		
 		PrettyPrintVisitor v1 = new PrettyPrintVisitor();
-		//TODO: Create your other visitor here. For example
-		//PrefixPrintVisitor v2 = new PrefixPrintVisitor();
-		//CalculationVisitor v3 = new CalculationVisitor();
-		//DepthVisitor v4 = new DepthVisitor();
+		PrefixPrintVisitor v2 = new PrefixPrintVisitor();
+		CalculationVisitor v3 = new CalculationVisitor();
+		DepthVisitor v4 = new DepthVisitor();
 		
 		// myExample1
 		myExample1.accept(v1);
+		myExample1.accept(v4);
 		//TODO: loggingService.info(v1.getResult());
 		//TODO: Add your code for using other visitors here 
 
@@ -77,7 +80,8 @@ public class TestVisitorExpressions {
 		myExample2.accept(v1);
 		//TODO: loggingService.info(v1.getResult());
 		//TODO: Add your code for using other visitors here
-		
+		loggingService.info(v1.getResult());
+		loggingService.info("Depth : " + v4.getResult());
 	}
 
 }

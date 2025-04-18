@@ -4,7 +4,7 @@ import visitor.syntax.AdditionExpression;
 import visitor.syntax.Constant;
 import visitor.syntax.DivisionExpression;
 import visitor.syntax.MultiplicationExpression;
-import visitor.syntax.SubstractionExpression;
+import visitor.syntax.SubtractionExpression;
 
 
 public interface ExpressionVisitor {
@@ -13,7 +13,7 @@ public interface ExpressionVisitor {
 	
 	void visitAdditionExpression(AdditionExpression e);
 	
-	void visitSubstractionExpression(SubstractionExpression e);
+	void visitSubtractionExpression(SubtractionExpression e);
 	
 	void visitMultiplicationExpression(MultiplicationExpression e);
 	

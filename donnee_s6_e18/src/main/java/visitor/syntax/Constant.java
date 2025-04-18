@@ -15,7 +15,7 @@ public class Constant implements Expression {
 	}
 	
 	public void accept(ExpressionVisitor v) {
-		//TODO: Write your code here
+		v.visitConstant(this);
 	}
 
 }
