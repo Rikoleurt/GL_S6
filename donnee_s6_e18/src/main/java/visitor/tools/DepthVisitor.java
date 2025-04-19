@@ -35,12 +35,12 @@ public class DepthVisitor implements ExpressionVisitor {
         visitBinaryExpression(e);
     }
 
-    private void visitBinaryExpression(ArithmeticExpression expr) {
+    private void visitBinaryExpression(ArithmeticExpression e) {
         DepthVisitor leftVisitor = new DepthVisitor();
         DepthVisitor rightVisitor = new DepthVisitor();
 
-        expr.getLeft().accept(leftVisitor);
-        expr.getRight().accept(rightVisitor);
+        e.getLeft().accept(leftVisitor);
+        e.getRight().accept(rightVisitor);
 
         result = 1 + Math.max(leftVisitor.getResult(), rightVisitor.getResult());
     }

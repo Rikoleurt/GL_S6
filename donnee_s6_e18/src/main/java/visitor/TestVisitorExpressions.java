@@ -67,6 +67,7 @@ public class TestVisitorExpressions {
 		
 		// myExample1
 		myExample1.accept(v1);
+		myExample1.accept(v3);
 		myExample1.accept(v4);
 		//TODO: loggingService.info(v1.getResult());
 		//TODO: Add your code for using other visitors here 
@@ -82,6 +83,7 @@ public class TestVisitorExpressions {
 		//TODO: Add your code for using other visitors here
 		loggingService.info(v1.getResult());
 		loggingService.info("Depth : " + v4.getResult());
+		loggingService.info("Result : " + v3.getResult());
 	}
 
 }
