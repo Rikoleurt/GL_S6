@@ -67,23 +67,35 @@ public class TestVisitorExpressions {
 		
 		// myExample1
 		myExample1.accept(v1);
+		myExample2.accept(v2);
 		myExample1.accept(v3);
 		myExample1.accept(v4);
-		//TODO: loggingService.info(v1.getResult());
-		//TODO: Add your code for using other visitors here 
-
 		
+		loggingService.info("---------------------------- Example 1 ----------------------------");
+
+		loggingService.info(v1.getResult());
+		loggingService.info(v2.getResult());
+		loggingService.info("Result : " + v3.getResult());
+		loggingService.info("Depth : " + v4.getResult());
+
 		// myExample2
                 // It is necessary to create a new visitor because of its string buffer,
                 // which still contains the previous result. This step is only needed for the 
                 // PrettyPrintVisitor and PrefixPrintVisitor.
                 v1 = new PrettyPrintVisitor();
+				v2 = new PrefixPrintVisitor();
 		myExample2.accept(v1);
-		//TODO: loggingService.info(v1.getResult());
-		//TODO: Add your code for using other visitors here
+		myExample2.accept(v2);
+		myExample2.accept(v3);
+		myExample2.accept(v4);
+
+		loggingService.info("---------------------------- Example 2 ----------------------------");
+
 		loggingService.info(v1.getResult());
-		loggingService.info("Depth : " + v4.getResult());
+		loggingService.info(v2.getResult());
 		loggingService.info("Result : " + v3.getResult());
+		loggingService.info("Depth : " + v4.getResult());
+
 	}
 
 }
