@@ -43,10 +43,15 @@ public class Matrix implements Iterable {
 		mat[row-1][column-1] = o;
 	}
 
-	public Iterator createIterator() {
+	public Iterator createRowColumnIterator() {
 		//TODO: Add your code here !!
 //		return new ColumnRowIterator(mat);
         return new RowColumnIterator(mat);
+	}
+
+	@Override
+	public Iterator createColumnRowIterator() {
+		return new ColumnRowIterator(mat);
 	}
 
 }

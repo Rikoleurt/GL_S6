@@ -2,6 +2,6 @@ package iterator;
 
 public interface Iterable {
 	
-	public Iterator createIterator();
-
+	public Iterator createRowColumnIterator();
+	public Iterator createColumnRowIterator();
 }

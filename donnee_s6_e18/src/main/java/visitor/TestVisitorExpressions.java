@@ -6,10 +6,10 @@ import visitor.syntax.DivisionExpression;
 import visitor.syntax.Expression;
 import visitor.syntax.MultiplicationExpression;
 import visitor.syntax.SubtractionExpression;
-import visitor.tools.CalculationVisitor;
-import visitor.tools.DepthVisitor;
-import visitor.tools.PrefixPrintVisitor;
-import visitor.tools.PrettyPrintVisitor;
+import visitor.tools.*;
+import visitor.tools.tree.BuildTreeViewer;
+import visitor.tools.tree.BuildTreeVisitor;
+
 import java.util.logging.*;
 
 public class TestVisitorExpressions {
@@ -67,7 +67,7 @@ public class TestVisitorExpressions {
 		
 		// myExample1
 		myExample1.accept(v1);
-		myExample2.accept(v2);
+		myExample1.accept(v2);
 		myExample1.accept(v3);
 		myExample1.accept(v4);
 		
@@ -95,6 +95,16 @@ public class TestVisitorExpressions {
 		loggingService.info(v2.getResult());
 		loggingService.info("Result : " + v3.getResult());
 		loggingService.info("Depth : " + v4.getResult());
+
+
+		BuildTreeVisitor bt1 = new BuildTreeVisitor();
+		myExample1.accept(bt1);
+
+		BuildTreeVisitor bt2 = new BuildTreeVisitor();
+		myExample2.accept(bt2);
+
+		BuildTreeViewer.displayTrees(bt1.getTree(), bt2.getTree());
+
 
 	}
 

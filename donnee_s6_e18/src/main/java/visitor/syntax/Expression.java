@@ -5,8 +5,8 @@ import visitor.tools.ExpressionVisitor;
 public interface Expression {
 
 	/**
-	 * Accepts the visitor v to access the data
-	 * @param v
+	 * Accepts the visitor v and allows it to access the data
+	 * @param v the expression visitor
 	 */
 	public void accept(ExpressionVisitor v);
 

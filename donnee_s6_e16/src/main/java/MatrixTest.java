@@ -1,4 +1,3 @@
-import iterator.ColumnRowIterator;
 import iterator.Iterator;
 import matrix.Matrix;
 
@@ -17,7 +16,12 @@ public class MatrixTest {
 		//TODO: Add your code here !!
 		//invoking createiterator() on matrix
 		//using this iterator to display the matrix elements
-		for (Iterator i = matrix.createIterator(); !i.isDone(); i.next()) {
+		System.out.println("--------------------------------------- RowColumnIterator ---------------------------------------");
+		for (Iterator i = matrix.createRowColumnIterator(); !i.isDone(); i.next()) {
+			System.out.println(i.currentItem());
+		}
+		System.out.println("--------------------------------------- ColumnRowIterator ---------------------------------------");
+		for(Iterator i = matrix.createColumnRowIterator(); !i.isDone(); i.next()) {
 			System.out.println(i.currentItem());
 		}
 	}

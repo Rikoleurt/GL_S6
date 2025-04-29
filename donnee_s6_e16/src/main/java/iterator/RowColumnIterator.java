@@ -31,9 +31,6 @@ public class RowColumnIterator implements Iterator {
 
     @Override
     public boolean isDone() {
-//        return rowColumnMat[currentRowColumn].length >= rowColumnMat[currentRowColumn].length;
-//        System.out.println(currentRowColumn + " ? " + rowColumnMat.length);
-
         return currentRow > rowColumnMat.length - 1 || currentColumn > rowColumnMat.length - 1;
     }
 
